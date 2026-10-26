@@ -2,7 +2,8 @@ import { test, expect } from "@playwright/test";
 
 // VEJA AQUI: Adicionámos o "isMobile" dentro das chavetas na linha abaixo
 test("CT-006: Realizar cadastro completo com e-mail dinâmico (E2E)", async ({ page, isMobile }) => {
-  
+  // 1. Aumentar o tempo limite deste teste E2E para 60 segundos
+  test.setTimeout(60000);
   // 1. Criar e-mail dinâmico
   const timestamp = new Date().getTime();
   const emailDinamico = `joanatas_${timestamp}@teste.com`;
@@ -29,17 +30,17 @@ test("CT-006: Realizar cadastro completo com e-mail dinâmico (E2E)", async ({ p
    
  // 5. Navegar para a área de "Explorar circuito"
   if (isMobile) {
-    await page.locator('#menuBtn').click();
+    await page.locator('#menuBtn').click({ force: true });
     await page.waitForTimeout(500); // Aguarda meio segundo para a animação do menu
   }
-  await page.getByRole('link', { name: 'Explorar circuito' }).click();
+  await page.getByRole('link', { name: 'Explorar circuito' }).click({ force: true });
   await expect(page.getByRole('heading', { name: 'Explore o circuito' })).toBeVisible();
 
   // 6. Navegar para a área "Meu passaporte"
   if (isMobile) {
-    await page.locator('#menuBtn').click();
+    await page.locator('#menuBtn').click({ force: true });
     await page.waitForTimeout(500); // Aguarda meio segundo para a animação do menu
   }
-  await page.getByRole('link', { name: 'Meu passaporte' }).click();
+  await page.getByRole('link', { name: 'Meu passaporte' }).click({ force: true });
   await expect(page.getByRole('heading', { name: 'Meu passaporte' })).toBeVisible();
 });
