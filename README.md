@@ -52,22 +52,19 @@ SENAI-TESTES/
 
 *Execução bem-sucedida da suíte completa de testes de API no terminal:*
 
-![Evidência dos Testes de API Passando](https://raw.githubusercontent.com/jonatasribeiro82/meus-testes-qa-senai/main/evidencias/print-testes.png)
+C:\QA\SENAI-TESTES\evidencias\screenshots\print-testes.png
 
----
+
 
 *Cadastro de participante validado com sucesso:*
+C:\QA\SENAI-TESTES\evidencias\screenshots\cadastro-participante.png
 
-![Cadastro de Participante](https://raw.githubusercontent.com/jonatasribeiro82/meus-testes-qa-senai/main/evidencias/cadastro-participante.png)
-
----
 
 *Relatório visual detalhado gerado pelo Playwright:*
+C:\QA\SENAI-TESTES\evidencias\screenshots\relatorio-playwright.png
 
-![Relatório Playwright](https://raw.githubusercontent.com/jonatasribeiro82/meus-testes-qa-senai/main/evidencias/relatorio-playwright.png)
 
 ---
 
 *Testes E2E (Interface) em execução real multiplataforma:*
-
-![Execução Teste E2E](https://raw.githubusercontent.com/jonatasribeiro82/meus-testes-qa-senai/main/evidencias/teste-e2e-execucao.png)
+C:\QA\SENAI-TESTES\evidencias\screenshots\teste-e2e-execucao.png
