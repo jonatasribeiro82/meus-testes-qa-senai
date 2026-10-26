@@ -52,16 +52,19 @@ SENAI-TESTES/
 ## 📊 Evidências Visuais
 
 *Execução bem-sucedida da suíte completa de testes de API no terminal:*
-
-![Evidência dos Testes de API Passando](evidencias/screenshots/print-testes.png)
-
-> **Relatório visual detalhado gerado pelo Playwright:**
-![Relatório Playwright](evidencias/screenshots/cadastro-participante.png)
-
-> **Relatório visual detalhado gerado pelo Playwright:**
-![Relatório Playwright](evidencias/screenshots/relatorio-playwright.png)
+![Evidência dos Testes de API Passando](./evidencias/screenshots/print-testes.png)
 
 ---
 
-> **Testes E2E (Interface) em execução real multiplataforma:**
-![Execução Teste E2E](evidencias/screenshots/teste-e2e-execucao.png)
+*Cadastro de participante validado com sucesso:*
+![Cadastro de Participante](./evidencias/screenshots/cadastro-participante.png)
+
+---
+
+*Relatório visual detalhado gerado pelo Playwright:*
+![Relatório Playwright](./evidencias/screenshots/relatorio-playwright.png)
+
+---
+
+*Testes E2E (Interface) em execução real multiplataforma:*
+![Execução Teste E2E](./evidencias/screenshots/teste-e2e-execucao.png)
