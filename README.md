@@ -48,25 +48,24 @@ SENAI-TESTES/
 
 
 ---
+---
+
 ## 📊 Evidências Visuais
 
 *Execução bem-sucedida da suíte completa de testes de API no terminal:*
-
-<img width="1917" height="1007" alt="relatorio-playwright" src="https://github.com/user-attachments/assets/f1dc4bb1-c065-45ac-8c6e-88e72fe91a27" />
-
-
-
-
-*teste-e2e-execucao:*
-<img width="1920" height="1080" alt="teste-e2e-execucao" src="https://github.com/user-attachments/assets/d94009d8-7fe9-4bb5-8564-a65f4a266ccd" />
-
-
-
-*Relatório visual detalhado gerado pelo Playwright:*
-<img width="1920" height="2507" alt="FireShot Capture 027 - meus-testes-qa-senai_README md at main · jonatasribeiro82_meus-test_ -  github com" src="https://github.com/user-attachments/assets/6ff5626a-4701-4ccc-8cf0-ac2d43ceefa3" />
-
-
+<img width="1917" alt="print-testes" src="https://github.com/user-attachments/assets/f1dc4bb1-c065-45ac-8...">
 
 ---
 
-<img width="1917" height="1007" alt="relatorio-playwright" src="https://gi
+*Cadastro de participante validado com sucesso:*
+<img width="1917" alt="cadastro-participante" src="https://github.com/user-attachments/assets/...">
+
+---
+
+*Relatório visual detalhado gerado pelo Playwright:*
+<img width="1917" alt="relatorio-playwright" src="https://github.com/user-attachments/assets/f1dc4bb1-c065-45ac-8...">
+
+---
+
+*Testes E2E (Interface) em execução real multiplataforma:*
+<img width="1920" alt="teste-e2e-execucao" src="https://github.com/user-attachments/assets/d94009d8-7fe9-4bb5-856...">
