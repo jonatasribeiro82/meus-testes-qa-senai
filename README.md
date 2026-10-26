@@ -52,19 +52,21 @@ SENAI-TESTES/
 
 *Execução bem-sucedida da suíte completa de testes de API no terminal:*
 
-C:\QA\SENAI-TESTES\evidencias\screenshots\print-testes.png
+<img width="1917" height="1007" alt="relatorio-playwright" src="https://github.com/user-attachments/assets/f1dc4bb1-c065-45ac-8c6e-88e72fe91a27" />
 
 
 
-*Cadastro de participante validado com sucesso:*
-C:\QA\SENAI-TESTES\evidencias\screenshots\cadastro-participante.png
+
+*teste-e2e-execucao:*
+<img width="1920" height="1080" alt="teste-e2e-execucao" src="https://github.com/user-attachments/assets/d94009d8-7fe9-4bb5-8564-a65f4a266ccd" />
+
 
 
 *Relatório visual detalhado gerado pelo Playwright:*
-C:\QA\SENAI-TESTES\evidencias\screenshots\relatorio-playwright.png
+<img width="1920" height="2507" alt="FireShot Capture 027 - meus-testes-qa-senai_README md at main · jonatasribeiro82_meus-test_ -  github com" src="https://github.com/user-attachments/assets/6ff5626a-4701-4ccc-8cf0-ac2d43ceefa3" />
+
 
 
 ---
 
-*Testes E2E (Interface) em execução real multiplataforma:*
-C:\QA\SENAI-TESTES\evidencias\screenshots\teste-e2e-execucao.png
+<img width="1917" height="1007" alt="relatorio-playwright" src="https://gi
