@@ -1,45 +1,67 @@
-# 🛡️ Mundo SENAI - Automação de Testes com Playwright
+# 🚀 Mundo SENAI — Automação de Testes (E2E & API)
 
-![Playwright](https://img.shields.io/badge/-Playwright-45ba4b?style=flat-square&logo=playwright&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![QA](https://img.shields.io/badge/QA-Engenharia_de_Qualidade-8A2BE2?style=flat-square)
+[![Playwright Tests](https://github.com/jonatasribeiro82/meus-testes-qa-senai/actions/workflows/playwright.yml/badge.svg)](https://github.com/jonatasribeiro82/meus-testes-qa-senai/actions)
+[![QA Engineering](https://img.shields.io/badge/QA-Automation%20%2F%20QAOps-blue?style=flat-square)](https://github.com/jonatasribeiro82/meus-testes-qa-senai)
+[![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-success?style=flat-square)](https://github.com/jonatasribeiro82/meus-testes-qa-senai)
 
-**Projeto desenvolvido pelo Esquadrão:** *Sentinelas do Código*  
-**Autor / QA:** Joanatas Ribeiro da Silva
-
----
-
-## 📊 Resumo Executivo
-Este projeto de automação garante a estabilidade, responsividade e o funcionamento correto da jornada do utilizador na plataforma **Mundo SENAI - Passaporte Digital**. A suíte de testes valida desde a renderização da página inicial até à criação completa de uma conta com injeção de dados dinâmicos, assegurando que o sistema responde perfeitamente tanto em computadores (Desktop Chromium) quanto em dispositivos móveis (Mobile Chrome e Safari).
-
-## 🧪 Categorias de Teste Aplicadas
-A arquitetura deste projeto cobre diferentes níveis de validação de qualidade de software:
-
-*   **Smoke Testing:** A bateria completa funciona como um teste de fumo rápido e altamente fiável para garantir que as rotas vitais do sistema estão operacionais.
-*   **End-to-End (E2E):** Simula a jornada completa de um utilizador real no sistema, gerando dados e validando o resultado final do fluxo.
-*   **Testes Funcionais:** Valida funções isoladas e específicas do sistema (modais, validações, redirecionamentos).
-*   **Testes de Interface (UI Testing):** Garante a renderização e visibilidade correta de textos e componentes estruturais.
-*   **Cross-Browser / Mobile Testing:** Todos os scripts são executados e validados em dimensões e motores de renderização diferentes, incluindo o tratamento de elementos responsivos (como menus hambúrguer).
+Repositório oficial de automação de testes do projeto **Passaporte Digital — Mundo SENAI**. O projeto cobre a validação de ponta a ponta (E2E) da interface web e testes de integração/contrato no backend em Java/Spring Boot.
 
 ---
 
-## 📋 Casos de Teste (CTs) Implementados
-
-| ID | Nome do Caso de Teste | Descrição e Validação | Categoria |
-| :--- | :--- | :--- | :--- |
-| **CT-001** | Validar Visão Geral para visitante | Confirma se a página principal (Home) carrega corretamente para utilizadores não autenticados, validando a visibilidade estrutural. | UI Testing |
-| **CT-002** | Validar abertura da janela de Login | Testa o fluxo de autenticação, garantindo que o modal de login é acionado corretamente ao clicar em "Entrar". | Funcional |
-| **CT-003** | Validar abertura da janela de Cadastro | Valida a interface do formulário de registo, certificando-se de que os campos estáticos e visuais estão presentes e funcionais. | Funcional |
-| **CT-004** | Validar itens do Menu Principal | Testa a navegação estrutural, acedendo aos links do menu e garantindo o redirecionamento correto nas páginas. | Funcional |
-| **CT-005** | Validar botão principal de CTA | Garante que o botão de conversão "Ver meu passaporte" está visível e clicável no centro do ecrã, utilizando filtros inteligentes para ignorar menus ocultos. | Funcional |
-| **CT-006** | Realizar cadastro completo (E2E) | Gera um e-mail dinâmico, preenche o formulário, adapta a navegação condicionalmente se for dispositivo mobile ou PC, acede à área restrita e valida o passaporte digital gerado. | E2E |
+## 🛠️ Tecnologias Utilizadas
+* **TypeScript / JavaScript** (Linguagem base dos scripts)
+* **Playwright Test** (Framework moderno de automação E2E e API)
+* **Node.js** (Ambiente de execução)
+* **Git & GitHub** (Versionamento e CI/CD)
 
 ---
 
-## 🚀 Como Executar os Testes
+## 🧪 Pirâmide de Testes Implementada
 
-Certifique-se de que tem o Node.js e as dependências do Playwright instaladas. Utilize o terminal na raiz do projeto para rodar os seguintes comandos:
+### 1. Topo da Pirâmide: Testes E2E (Interface / UI)
+* **Cobertura:** 18 testes automatizados validando a experiência do utilizador.
+* **Escopos:** Fluxos de login, cadastro com validações de regras de negócio, navegação pelo circuito de oficinas e interações visuais.
+* **Multiplataforma:** Executado e validado em **Desktop (Chromium)**, **Mobile Chrome (Android)** e **Mobile Safari (iOS)**.
 
-**Executar toda a suíte (Background):**
-```bash
-npx playwright test
+### 2. Meio da Pirâmide: Testes de API & Integração (`CheckIn-API`)
+* **Cobertura:** 6 testes de contrato e integração batendo diretamente no backend Java (`http://158.101.19.205:8080`)[cite: 1].
+* **Endpoints Validados:**
+  * `POST /users` (Cadastro de participantes com validação de status `201` e tratamento de duplicidade)[cite: 1].
+  * `POST /auth/login` (Autenticação e emissão de Token JWT)[cite: 1].
+  * `GET /activities` (Listagem dinâmica do circuito de oficinas do SENAI)[cite: 1].
+  * `POST /checkins` (Simulação de check-in autenticado via QR Code)[cite: 1].
+  * `GET /users` (Testes de segurança e bloqueio de rotas sem autorização `401/403`)[cite: 1].
+
+---
+
+## 📂 Estrutura do Projeto
+```text
+SENAI-TESTES/
+│
+├── tests/
+│   ├── e2e-fluxos.spec.ts     # Testes de Interface e E2E (Desktop & Mobile)
+│   └── api-checkin.spec.ts    # Testes de Integração e API (Backend Java)
+│
+├── playwright.config.ts       # Configurações globais de projetos e navegadores
+├── package.json               # Dependências do projeto
+└── README.md                  # Documentação oficial
+
+
+---
+
+## 📊 Evidências Visuais
+
+*Execução bem-sucedida da suíte completa de testes de API no terminal:*
+
+![Evidência dos Testes de API Passando](evidencias/screenshots/print-testes.png)
+
+> **Relatório visual detalhado gerado pelo Playwright:**
+![Relatório Playwright](evidencias/screenshots/cadastro-participante.png)
+
+> **Relatório visual detalhado gerado pelo Playwright:**
+![Relatório Playwright](evidencias/screenshots/relatorio-playwright.png)
+
+---
+
+> **Testes E2E (Interface) em execução real multiplataforma:**
+![Execução Teste E2E](evidencias/screenshots/teste-e2e-execucao.png)
