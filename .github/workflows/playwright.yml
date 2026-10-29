@@ -1,0 +1,38 @@
+name: Testes Automatizados - Senai
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Opcional: Executar automaticamente todos os dias às 08:00 da manhã
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  test:
+      timeout-minutes: 60
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          
+      - name: Instalar dependências
+        run: npm ci
+        
+      - name: Instalar browsers do Playwright
+        run: npx playwright install --with-deps
+        
+      - name: Executar testes do Playwright
+        run: npx playwright test
+        
+      - name: Enviar notificação de falha/sucesso
+        if: always()
+        uses: 8398a7/action-slack@v3 # Exemplo para notificações ou outras integrações
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
