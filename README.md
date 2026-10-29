@@ -48,6 +48,28 @@ SENAI-TESTES/
 
 
 ---
+## ⚙️ Como Instalar e Executar
+
+**Pré-requisitos:** Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/jonatasribeiro82/meus-testes-qa-senai.git
+
+2.Instale as dependências e os navegadores base do Playwright:
+
+npm install
+npx playwright install
+
+3.Execute a bateria completa de testes (E2E e API):
+npx playwright test
+
+4.Gere e visualize o relatório HTML detalhado de qualidade:
+
+npx playwright show-report
+
+
+
 ---
 
 ## 📊 Evidências Visuais
@@ -69,3 +91,10 @@ SENAI-TESTES/
 
 *Testes E2E (Interface) em execução real multiplataforma:*
 <img width="1920" alt="teste-e2e-execucao" src="https://github.com/user-attachments/assets/d94009d8-7fe9-4bb5-856...">
+
+
+Autor
+Joanatas Ribeiro da Silva
+Estudante de Análise e Desenvolvimento de Sistemas (UNINASSAU) | Curso  Técnico em Informática para Internet (SENAI / Porto Digital- Residência tecnológica)
+Curso - especialização - Testes de Software Aponti/PE
+Construindo conhecimentos práticos e lógicas de automação com foco em Qualidade de Software (QA).
