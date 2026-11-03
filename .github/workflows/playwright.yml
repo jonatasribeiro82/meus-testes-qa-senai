@@ -12,33 +12,31 @@ on:
   schedule:
     # Roda automaticamente de forma agendada. Aqui está programado para rodar todos os dias às 08:00.
     - cron: '0 8 * * *'
+  workflow_dispatch:
 
 # Os "jobs:" são as tarefas que o servidor vai executar.
 jobs:
   test: # Nome que damos a este trabalho.
-    # Se o teste travar por algum motivo, o GitHub cancela automaticamente após 60 minutos.
     timeout-minutes: 60
-    # Define o computador (servidor) que o GitHub vai emprestar para rodar o teste. Aqui, é um Linux Ubuntu.
     runs-on: ubuntu-latest
     
-    # Os "steps:" são o passo a passo exato que o servidor Linux vai seguir.
     steps:
       # PASSO 1: O servidor faz o download de todo o código do seu repositório para dentro dele.
       - uses: actions/checkout@v4
       
-      # PASSO 2: O servidor instala a linguagem Node.js na versão 20 (a que corrigimos antes).
+      # PASSO 2: O servidor instala a linguagem Node.js na versão 20.
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           
-      # PASSO 3: O servidor lê o seu arquivo package.json e instala as bibliotecas do projeto (como o próprio Playwright).
+      # PASSO 3: O servidor lê o package.json e instala as dependências.
       - name: Instalar dependências
         run: npm ci
         
-      # PASSO 4: O servidor baixa e instala os navegadores "fantasmas" (Chrome, Firefox, etc.) para conseguir simular acessos.
+      # PASSO 4: O servidor baixa os browsers do Playwright.
       - name: Instalar browsers do Playwright
         run: npx playwright install --with-deps
         
-      # PASSO 5: Finalmente, o servidor executa o comando para rodar os testes que você escreveu nas aulas.
+      # PASSO 5: Executa a suíte de testes.
       - name: Executar testes do Playwright
         run: npx playwright test
